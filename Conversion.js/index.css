@@ -1,0 +1,134 @@
+/* App container (dark mode background) */
+.app-container {
+  position: absolute;
+  width: 550px;
+  height: 729px;
+  left: 696px;
+  top: 126px;
+  background: #1F2937;
+  font-family: 'Inter', sans-serif;
+  border-radius: 25px;
+}
+/* Header / hero section */
+.header {
+  position: absolute;
+  width: 550px;
+  height: 285px;
+  left: 0;
+  top: 0;
+  background: #6943FF;
+  border: 3px solid #000;
+  box-sizing: border-box;
+  border-radius: 25px;
+}
+
+/* Title text */
+.header-title {
+  position: absolute;
+  left: 51px;
+  top: 33px;
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 38px;
+  text-align: center;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+/* Number to convert */
+.number-display {
+  position: absolute;
+  width: 117px;
+  height: 83px;
+  left: calc(50% - 107px/2);
+  top: 100px;
+
+  border: 3px solid #B295FF;
+  border-radius: 5px;
+  background: transparent;
+  box-sizing: border-box;
+
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 38px;
+  text-align: center;
+  color: #FFFFFF;
+
+  outline: none; /* removes default focus glow */
+}
+
+/* Rectangle outline around number */
+.number-box {
+  position: relative;
+  width: 117px;
+  height: 83px;
+  left: calc(50% - 107px/2);
+
+  top: 101px;
+  border: 3px solid #B295FF;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+/* Button container */
+.convert-btn {
+  position: absolute;
+  width: 117px;
+  height: 42px;
+  left: 217px;
+  top: 209px;
+  background: #fff;
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.05);
+  border-radius: 5px;
+}
+
+/* Button label */
+.convert-btn span {
+  position: absolute;
+  left: 28px;
+  top: 9px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #3D3D3D;
+  
+}
+/* Card container */
+.card {
+  position: absolute;
+  width: 500px;
+  height: 108px;
+  left: 25px;
+  background: #273549;
+  border-radius: 5px;
+}
+
+/* Example positions for each card */
+.card.length { top: 321px; }
+.card.volume { top: 453px; }
+.card.mass   { top: 585px; }
+
+/* Card heading (e.g. "Length (Meter/Feet)") */
+.card-title {
+  position: absolute;
+  width: 346px;
+  left: 77px;
+  top: 31px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+  color: #CCC1FF;
+}
+
+/* Card supporting text (results) */
+.card-result {
+  position: absolute;
+  width: 346px;
+  left: 77px;
+  top: 65px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  text-align: center;
+  color: #fff;
+}
