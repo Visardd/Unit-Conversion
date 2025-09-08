@@ -3,12 +3,12 @@ const convBtn = document.getElementById("convert-btn")
 const lenEl = document.getElementById("length-result")
 const volEl = document.getElementById("volume-result")
 const massEl = document.getElementById("mass-result")
+const saveBtn = document.getElementById("save-btn")
+const savedList = document.getElementById("saved-list")
 
 
 
-
-
-
+ 
 function render(value){
     value = numEl.value 
     console.log(value)
@@ -19,8 +19,18 @@ function render(value){
 }
 
 // Button click funcitonality
-convBtn.addEventListener("click", function(){
-    render()
+convBtn.addEventListener("click", render)
+
+saveBtn.addEventListener("click", () => {
+    const value = Number(numEl.value)
+    if (!value) return
+
+    const li = document.createElement("li")
+    li.textContent = `
+      ${lenEl.textContent} | ${volEl.textContent} | ${massEl.textContent}
+    `
+    savedList.appendChild(li)
 })
+
 
 // maybe add local storage to practice using it e.g. store old conversion lets say 1kg = 2.2 lbs or 100m = xyz ft
