@@ -12,9 +12,9 @@ let list = [];
 function calculate(value) {
   const num = Number(value);
   return {
-    volume: `${num} Litres = ${(num / 3.785).toFixed(4)} gallons | ${num} gallons = ${(num * 3.785).toFixed(4)} litres`,
-    mass: `${num} kilos = ${(num * 2.205).toFixed(4)} pounds | ${num} pounds = ${(num / 2.205).toFixed(4)} kilos`,
-    length: `${num} meters = ${(num * 3.281).toFixed(4)} feet | ${num} feet = ${(num / 3.281).toFixed(4)} meters`,
+    volume: `${num} Litres = ${(num / 3.785).toFixed(4)} gallons  <br>${num} gallons = ${(num * 3.785).toFixed(4)} litres`,
+    mass: `${num} kilos = ${(num * 2.205).toFixed(4)} pounds  <br>${num} pounds = ${(num / 2.205).toFixed(4)} kilos`,
+    length: `${num} meters = ${(num * 3.281).toFixed(4)} feet  <br>${num} feet = ${(num / 3.281).toFixed(4)} meters`,
   };
 }
 
