@@ -9,6 +9,7 @@
   font-family: 'Inter', sans-serif;
   border-radius: 25px;
 }
+
 /* Header / hero section */
 .header {
   position: absolute;
@@ -34,6 +35,7 @@
   letter-spacing: -0.03em;
   color: #fff;
 }
+
 /* Number to convert */
 .number-display {
   position: absolute;
@@ -53,7 +55,8 @@
   text-align: center;
   color: #FFFFFF;
 
-  outline: none; /* removes default focus glow */
+  outline: none;
+  /* removes default focus glow */
 }
 
 /* Rectangle outline around number */
@@ -68,6 +71,7 @@
   border-radius: 5px;
   box-sizing: border-box;
 }
+
 /* Button container */
 .convert-btn {
   position: absolute;
@@ -76,7 +80,7 @@
   left: 217px;
   top: 209px;
   background: #fff;
-  box-shadow: 0px 1px 2px rgba(0,0,0,0.05);
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
   border-radius: 5px;
 }
 
@@ -90,8 +94,9 @@
   font-size: 16px;
   line-height: 24px;
   color: #3D3D3D;
-  
+
 }
+
 /* Card container */
 .card {
   position: absolute;
@@ -103,9 +108,17 @@
 }
 
 /* Example positions for each card */
-.card.length { top: 321px; }
-.card.volume { top: 453px; }
-.card.mass   { top: 585px; }
+.card.length {
+  top: 321px;
+}
+
+.card.volume {
+  top: 453px;
+}
+
+.card.mass {
+  top: 585px;
+}
 
 /* Card heading (e.g. "Length (Meter/Feet)") */
 .card-title {
@@ -136,7 +149,8 @@
 /* Sidebar */
 .sidebar {
   position: absolute;
-  right: 0px; /* hidden off-screen initially */
+  right: 0px;
+  /* hidden off-screen initially */
   top: 0;
   width: 250px;
   height: 100%;
@@ -169,9 +183,10 @@
   border-radius: 5px;
   font-size: 14px;
 }
+
 .save-btn {
   position: relative;
   background: #fff;
-  box-shadow: 0px 1px 2px rgba(0,0,0,0.05);
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
   border-radius: 5px;
 }

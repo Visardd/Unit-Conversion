@@ -1,36 +1,75 @@
-const numEl = document.getElementById("number-el")
-const convBtn = document.getElementById("convert-btn")
-const lenEl = document.getElementById("length-result")
-const volEl = document.getElementById("volume-result")
-const massEl = document.getElementById("mass-result")
-const saveBtn = document.getElementById("save-btn")
-const savedList = document.getElementById("saved-list")
+const numEl = document.getElementById("number-el");
+const convBtn = document.getElementById("convert-btn");
+const lenEl = document.getElementById("length-result");
+const volEl = document.getElementById("volume-result");
+const massEl = document.getElementById("mass-result");
+const saveBtn = document.getElementById("save-btn");
+let savedList = document.getElementById("saved-list");
+const delBtn = document.getElementById("del-btn");
 
+let list = [];
 
-
- 
-function render(value){
-    value = numEl.value 
-    console.log(value)
-    volEl.innerHTML = `${value} Litres = ${(value / 3.785).toFixed(4)} gallons | ${value} gallons = ${(value *  3.785).toFixed(4)} litres`
-    massEl.innerHTML = `${value} kilos = ${(value * 2.205).toFixed(4)} pounds | ${value} pounds = ${(value / 2.205).toFixed(4)} kilos`
-    lenEl.innerHTML = `${value} Meters = ${(value * 3.281).toFixed(4)} feet | ${value} feet = ${(value / 3.281).toFixed(4)} meters`
-    
+function calculate(value) {
+  const num = Number(value);
+  return {
+    volume: `${num} Litres = ${(num / 3.785).toFixed(
+      4
+    )} gallons | ${num} gallons = ${(num * 3.785).toFixed(4)} litres`,
+    mass: `${num} kilos = ${(num * 2.205).toFixed(
+      4
+    )} pounds | ${num} pounds = ${(num / 2.205).toFixed(4)} kilos`,
+    length: `${num} meters = ${(num * 3.281).toFixed(
+      4
+    )} feet | ${num} feet = ${(num / 3.281).toFixed(4)} meters`,
+  };
 }
 
-// Button click funcitonality
-convBtn.addEventListener("click", render)
+function displayResults(value) {
+  const results = calculate(value);
+  volEl.innerHTML = results.volume;
+  massEl.innerHTML = results.mass;
+  lenEl.innerHTML = results.length;
+}
+
+function render(list) {
+  let listItems = "";
+  for (let i = 0; i < list.length; i++) {
+    const results = calculate(list[i]);
+    listItems += `
+      <li>
+        <p>${results.volume}</p>
+        <p>${results.mass}</p>
+        <p>${results.length}</p>
+      </li>
+    `;
+  }
+  savedList.innerHTML = listItems;
+}
+
+// Button click functionality
+convBtn.addEventListener("click", () => {
+  displayResults(numEl.value);
+});
 
 saveBtn.addEventListener("click", () => {
-    const value = Number(numEl.value)
-    if (!value) return
+  if (numEl.value) {
+    list.push(numEl.value);
+    localStorage.setItem("conversions", JSON.stringify(list));
+    render(list);
+  }
+});
 
-    const li = document.createElement("li")
-    li.textContent = `
-      ${lenEl.textContent} | ${volEl.textContent} | ${massEl.textContent}
-    `
-    savedList.appendChild(li)
-})
+delBtn.addEventListener("click", function () {
+  localStorage.clear();
+  list = [];
+  savedList.innerHTML = "";
+});
 
-
-// maybe add local storage to practice using it e.g. store old conversion lets say 1kg = 2.2 lbs or 100m = xyz ft
+// Load from localStorage on page load
+window.addEventListener("load", () => {
+  const saved = JSON.parse(localStorage.getItem("conversions"));
+  if (saved) {
+    list = saved;
+    render(list);
+  }
+});

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,22 +8,23 @@
   <link rel="stylesheet" href="index.css">
 
 </head>
+
 <body>
   <div class="app-container">
-    
-       <header class="header">
+
+    <header class="header">
       <h1 class="header-title">Metric/Imperial Unit Conversion</h1>
 
-      
+
       <div class="number-box"></div>
       <input type="number" class="number-display" id="number-el"></input>
 
-           <button class="convert-btn" id="convert-btn">
+      <button class="convert-btn" id="convert-btn">
         <span>Convert</span>
       </button>
     </header>
 
-    
+
     <section class="card length">
       <h2 class="card-title">Length (Meters / Feet)</h2>
       <p class="card-result" id="length-result"></p>
@@ -42,12 +44,15 @@
   <!-- Saved Measurements Sidebar -->
   <aside class="sidebar" id="sidebar">
     <h2>Saved Measurements</h2>
-  
+
     <button class="save-btn" id="save-btn">Save Conversion</button>
+    <button class="del-btn" id="del-btn">Delete Conversion</button>
+
     <ul id="saved-list"></ul>
 
   </aside>
 
   <script src="index.js"></script>
 </body>
+
 </html>
